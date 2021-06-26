@@ -1,1 +1,21 @@
+-- Problem 1
+An event consists of one or more TRIGGERS, an optional set of CONDITIONS, and one or more ACTIONS to perform when the TRIGGER(S) and CONDITION(S) are fulfilled.
 
+-- Problem 2
+i. ScenEdit_SetWeather(21,0,0.0,1)
+ii. ScenEdit_SetWeather(15,40,0.9,4)
+
+-- Problem 3
+i. automatic_evasion -- boolean -- true if the unit should automatically evade
+ii. engage_opportunity_targets -- boolean -- true if the unit should take opportunistic shots
+iii. withdraw_on_damage -- string -- withdraws if unit has damage of certain amount: Ignore(0), Percent5(1), Percent25(2), Percent50(3), Percent75(4)
+
+-- Problem 4
+i. Duration -- string -- length of scenario as days:hours:minutes:seconds
+ii. InCampaignMode -- boolean -- Currently in campaign mode
+iii. Sides -- number -- number of sides in a scenario
+
+-- Problem 5
+i. speed -- number -- the unit's current speed
+ii. formation -- table -- table of unit's formation info {bearing, type (of bearing), distance, sprint (and drift)}
+iii. Launch -- method -- (true/false) trigger the unit to launch from base (true) or abort launch (false)
