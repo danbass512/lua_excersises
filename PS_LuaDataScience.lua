@@ -6,7 +6,7 @@ function five_number_summary(data)
   
   --Get Sample Minimum
   for k,v in ipairs(data) do
-      return result[sample_min] = math.min(v)
+      table.insert(result, sample_min, math.min(v))
   end
   
   --Get Lower Quartile
@@ -14,7 +14,9 @@ function five_number_summary(data)
   low_q = (#data + 1) / 4
   
   for k,v in ipairs(data) do
-      return result[lower_quartile] = data[low_q]
+      if k == low_q then
+        table.insert(result, lower_quartile, v)
+      end
   end
       
   --Get Median
@@ -22,34 +24,53 @@ function five_number_summary(data)
   for k,v in ipairs(data) do
       if type(v) == 'number' then
         table.insert(t, v)
+      end
   end
       
    table.sort(t)
    
    if math.fmod(#t,2) == 0 then
-      return (t[#t/2] + t[(#t/2)+1]) / 2
+      local median = (t[#t/2] + t[(#t/2)+1]) / 2
    else
-      return t[math.ceil(#t/2)]
+      local median = t[math.ceil(#t/2)]
    end
+    
+   table.insert(result, median, median)
       
   --Get Upper Quartile
   upper_q = (#data + 1) * (3/4)
   
   for k,v in ipairs(data) do
-      result[upper_quartile] = data[upper_q]
+      if k == upper_q then
+          table.insert(result, upper_q, v)
+      end
+  end
  
   --Get Sample Maximum 
   for k,v in ipairs(data) do 
-      return result[sample_max] = math.max(v)
+      table.insert(result, sample_max, math.max(v))
   end
   
-  print(result)
+  --Print Result
+  for k, v in ipairs(result) do
+      print(k, " = ", v)
+  end
  end
 
 2 -- Set (Data Structure)
 
 
-3 -- Monte Carlo Methods for Pi
 
+3 -- Monte Carlo Methods for Pi
+function estimate_pi(num_trials)
+  plot = {}
+  for i=1, #num_trials do
+      table.insert(plot, math.random(), math.random())
+  end
+  local center_point {}
+  center_point[0.5] = 0.5
+  for k,v in ipairs(plot) do
+    if 
+end
 
 4 -- Creating Normally Distributed Data
