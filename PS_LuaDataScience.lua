@@ -144,5 +144,6 @@ function estimate_pi(num_trials)
 
 4 -- Creating Normally Distributed Data
 function random_norm(mean, var)
-      
+      return  math.sqrt(-2 * var * math.log(math.random())) *
+            math.cos(2 * math.pi * math.random()) + mean
 end
