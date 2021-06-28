@@ -63,14 +63,29 @@ function five_number_summary(data)
 
 3 -- Monte Carlo Methods for Pi
 function estimate_pi(num_trials)
-  plot = {}
+  x = {}
+  y = {}
   for i=1, #num_trials do
-      table.insert(plot, math.random(), math.random())
+      table.insert(x, math.random())
+      table.insert(y, math.random())
   end
-  local center_point {}
-  center_point[0.5] = 0.5
-  for k,v in ipairs(plot) do
-    if 
-end
+  r = {}
+  inner = 0
+  outer = 0
+  for k in x do
+    for j in y do
+      table.insert(r, k^2 + j^2)
+      for v in r do
+        if v < 1 then
+          inner = inner + 1
+        else
+          outer = outer + 1
+        end
+    end
+   
+   pi = 4 * (inner/(inner+outer))
+   return print(pi)
+ end
+    
 
 4 -- Creating Normally Distributed Data
