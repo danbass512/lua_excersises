@@ -58,16 +58,15 @@ function five_number_summary(data)
  end
 
 2 -- Set (Data Structure)
-local set_operator = {
-  __add = function set_add(set, x)
-    return table.insert(set, x)
 
 Set = {}
-    
+
+--Add element to set
 function Set:set_add(x)
-      return table.insert(set, x)
+      return table.insert(Set, x)
 end
-    
+
+-- Check if element in Set
 function Set:set_check(x)
       local checker = 0
       for k,v in ipairs(set) do
@@ -77,12 +76,44 @@ function Set:set_check(x)
       end
       for i in checker do
         if checker > 0 then
-          print("Value is in the set.")
+          return print("Value is in the set.")
         else
-          print("Value is not in the set.")
+          return print("Value is not in the set.")
         end
       end
+  end
+
+-- Make Set
+ function Set:make_set(data)
+     for k,v in ipairs(data) do
+        return table.insert(Set, v)
+      end
+    end
+    
+-- Set Union
+ function Set:set_union(set1, set2)
+     local union = {}
+     for k1, v1 in set1 do
+        for k2, v2 in set2 do
+          table.insert(union, v1)
+          table.insert(union, v2)
+        end
+     end
+     return union
 end
+
+--Set Intersection
+function Set:set_intersection(set1, set2)
+    local intersect = {}
+    for k1, v1 in set1 do
+      for k2, v2 in set2 do
+        if v1 == v2 then
+          table.insert(intersect, v1)
+        end
+      end
+    end
+  return intersect
+ end
 
 3 -- Monte Carlo Methods for Pi
 function estimate_pi(num_trials)
