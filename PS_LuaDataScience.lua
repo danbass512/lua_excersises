@@ -58,8 +58,31 @@ function five_number_summary(data)
  end
 
 2 -- Set (Data Structure)
+local set_operator = {
+  __add = function set_add(set, x)
+    return table.insert(set, x)
 
-
+Set = {}
+    
+function Set:set_add(x)
+      return table.insert(set, x)
+end
+    
+function Set:set_check(x)
+      local checker = 0
+      for k,v in ipairs(set) do
+        if v == x then
+          checker = checker + 1
+        end
+      end
+      for i in checker do
+        if checker > 0 then
+          print("Value is in the set.")
+        else
+          print("Value is not in the set.")
+        end
+      end
+end
 
 3 -- Monte Carlo Methods for Pi
 function estimate_pi(num_trials)
@@ -72,11 +95,11 @@ function estimate_pi(num_trials)
   r = {}
   inner = 0
   outer = 0
-  for k in x do
-    for j in y do
-      table.insert(r, k^2 + j^2)
-      for v in r do
-        if v < 1 then
+  for k,v in ipairs(x) do
+    for j,p in ipairs(y) do
+      table.insert(r, v^2 + p^2)
+      for a,b in ipairs(r) do
+        if b < 1 then
           inner = inner + 1
         else
           outer = outer + 1
@@ -89,3 +112,6 @@ function estimate_pi(num_trials)
     
 
 4 -- Creating Normally Distributed Data
+function random_norm(mean, var)
+      
+end
