@@ -34,6 +34,7 @@ set_two = Set{'two', 'one', 'three'}
 [three]
 
 --Problem 2
+--Done
 
 --Problem 3
 matrix = require 'pl.array2d'
@@ -106,6 +107,12 @@ end
 print(linreg.linear(x,y))
 
 --Problem 5
+require 'nn';
+
+a = torch.Tensor(1,10)
+b = torch.Tensor(1,10)
+
+for i,v in ipairs()
 
 --Problem 6
 
